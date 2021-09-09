@@ -1,0 +1,58 @@
+
+<div class="modal fade modal-opacity" id="informationModal" tabindex="-1" aria-labelledby="informationModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content modal-color">
+			<!-- Modal header => title and close button -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="informationModalLabel">Quelques informations</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+         <div class="modal-body">
+	         {# GIF #}
+            <img src="{{ asset('assets/images/background/logo-rando-relais-128x70.png') }}" alt="image illustration" width="200px" class="float-start me-2 rounded">
+            {# Descrption of the app #}
+            <p>Le site Rando-Relais a pour but d’aider le randonneur itinérant à bénéficier de différents services sur son parcours grâce aux Anges du chemin.Les services offerts peuvent être de différentes natures : un emplacement dans un jardin pour monter la tente, un simple robinet pour remplir la poche à eau, ou encore une adresse postale à mi-parcours pour s’envoyer un colis contenant de quelques provision, quelques effets personnels, ou encore de nouveaux topo-guides par exemple.
+            </p>
+            <p>
+            Selon les cas, il pourra également s’agir d’une douche, d’une chambre pour la nuit, ou encore d’un pique-nique. Dans tous les cas, ces services sont offerts gracieusement par les Anges du chemin.
+            </p>
+            <p>Amis visiteurs, vous pouvez remplir un formulaire d’inscription très simple pour devenir utilisateur. Vous pourrez alors choisir d’être  Marcheur ou Ange du chemin !!
+            </p>
+            <p>Marcheur : vous profitez d’un accès complet au site et pouvez demander à bénéficier des services proposés sur votre parcours.</p>
+            <p>Ange du chemin : vous êtes un marcheur, mais en plus, passionné et généreux, vous souhaitez mettre à disposition de la communauté un ou plusieurs services.
+            </p>
+            <p>Fonctionnement : sur la page d’accueil est présentée, triée par date d’inscription, la liste des Anges du chemin. Une recherche affinée par commune permet de réduire efficacement cette liste en la limitant à votre zone d’évolution.
+            </p>
+            <p>Sous réserve d’être connecté, il vous est alors possible d’accéder à la page information d’un Ange du chemin qui propose ses services dans votre zone de recherche.
+            </p>
+            <p>Vous prenez contact avec lui par téléphone, pour vous assurer que le service convoité est toujours disponible (En effet, l’emplacement pour monter la tente, par exemple, est peut-être déjà occupé !) et, le cas échéant, vous récupérez auprès de lui, l’adresse ou l’itinéraire pour arriver à destination.
+            </p>
+            <h3 class="h.black text-center">Services proposables aux marcheurs</h3>
+            <table class="mt-4 table table-responsive table-bordered text-center text-light">
+			      <thead>
+				      <tr>
+					      <th scope="col">Logo</th>
+					      <th scope="col">Service</th>
+					      <th scope="col">Description</th>
+				      </tr>
+			      </thead>
+			      <tbody>
+				   {# For each service in the variable services #}
+				   {% for service in listService.shareService %}
+					   <tr>
+						   <th scope="row"><img src="{{ asset('assets/uploads/' ~ service.image) }}" alt="" width="30px"></th>
+				         <td>{{ service.name }}</td>
+				         <td>{{ service.description }}</td>
+					   </tr>
+	            {% endfor %}
+			      </tbody>       
+            </table>
+            <p>Enfin, n’oubliez pas que ce site, donc l’accès à ces services, n’existe que par les Anges du chemin. Pensez donc à distiller un petit mot gentil à leur égard, à votre arrivée, comme à votre départ, ce sera pour eux le meilleurs remerciement !!</p>
+         </div>
+         {# Button to close the modal and return to the home page #}
+         <div class="modal-footer">
+            <a href="{{ path("main")}}" class="btn btn-success" data-bs-dismiss="modal">Fermer</a>
+         </div>
+      </div>
+   </div>
+</div>

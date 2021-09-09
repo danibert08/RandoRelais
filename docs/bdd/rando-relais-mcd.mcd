@@ -1,0 +1,6 @@
+user : _role, first_name, last_name, picture, password, city, longitude, latitude, zip_code, email, phone_number, status
+offer, 0N user, 0N service
+service : _name, picture, description
+
+review: _rating, comment
+has, 0N user, 01 review

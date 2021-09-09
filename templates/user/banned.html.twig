@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Bannis
+	{{ app.user.firstName }}
+	-
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<div class="mb-3 mt-3 col-lg-6 mx-auto">
+		<h2 class="text-center mt-3">Compte bannis</h2>
+		<p>Bonjour
+			{{ app.user.firstName }},</p>
+		<p>
+			Conformément à nos
+			<a class="text-decoration-none" href="{{ path('main_terms_of_services') }}">Conditions Générales d'Utilisation
+			</a>(CGU) et suite au non-respect de ses dernières votre compte a été bannis.
+		<p>De fait, il ne vous est plus possible d'accéder au site Rando-Relais et à son contenu.</p>
+		</p>
+		<p>Afin de vous aviser de cette mesure, lors de sa mise en place, un email vous avez été adressé à 
+			{{ app.user.email }}.</p>
+		<p></p>
+		<p>Cordialement.</p>
+		<p>L'équipe de Rando Relais.</p>
+	</div>
+{% endblock %}

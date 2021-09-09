@@ -1,0 +1,6 @@
+<div class="d-inline-flex mb-3 justify-content-center ">
+<form method="post" action="{{ path('admin_review_delete', {'id': review.id}) }}" onsubmit="return confirm('Etes vous sûr de vouloir supprimer cette évaluation ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ review.id) }}">
+    <button class="border-0"><i class="far fa-trash-alt btn btn-danger"></i></button>
+</form>
+</div>

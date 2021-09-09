@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Réactiver mon compte
+	{{ app.user.firstName }}
+	-
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<div class="mb-3 mt-3 col-lg-6 mx-auto">
+		<h2 class="text-center mt-3">Compte désactivé &#9785;</h2>
+		<p>Bonjour
+			{{ app.user.firstName }},</p>
+		<p>
+			Vous avez récemment demandé la suppression de votre compte associé à l'adresse email
+			{{ app.user.email}}.
+		</p>
+		<p>Conformément à nos
+			<a class="text-decoration-none" href="{{ path('main_terms_of_services') }}">Conditions Générales d'Utilisation
+			</a>(CGU) la suppression définitive de votre compte sera effectuée dans les meilleurs délais.</p>
+		<p>
+			Si vous souhaitez de nouveau bénéficier de nos services, nous vous offrons la possibilité de réactiver votre compte.
+		</p>
+		<form action="{{ path('user_reactivate_account', {id:app.user.id}) }}" method="post">
+			<input type="hidden" name="_method" value="PATCH">
+			<input type="hidden" name="token" value="{{ csrf_token('reactivate-user-account' ~ app.user.id) }}">
+			<button class="btn btn-success w-100 mb-3">Réactiver mon compte</button>
+		</form>
+		{# <a class="btn btn-success w-100 mb-3" href="{{ path('user_reactivate_account', {id:app.user.id, token:csrf_token('user_reactivate_account' ~ app.user.id)}) }}">Réactiver mon compte
+		</a> #}
+		<a class="btn btn-danger w-100 mb-3" href="{{ path("app_logout")}}">Se déconnecter</a>
+		<div>
+		{% endblock %}

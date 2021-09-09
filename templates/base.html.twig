@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{# Title of the app #}
+			{% block title %}Rando Relais
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			{# START style CSS #}
+			<!-- bootstrap css -->
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+			<link
+			rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
+			<!-- Leaflet css -->
+			<link
+			rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+			<!-- Google fonts for the titles : Oswald Font -->
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link
+			href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>
+			<!-- Google fonts for the paragrafes : Open Sans Font -->
+			<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+			{# Font Awesome #}
+			<link
+			rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+			{# Favicon #}
+			<link rel="shortcut icon" type="icon" href="{{ asset('assets/images/favicon.ico') }}"/>
+		{# END style CSS #}
+		{% endblock %}
+	</head>
+	<body>
+		{# include the modal to have it in all pages#}
+		{% include "partials/_modal-info.html.twig" %}
+		{# START header for each page #}
+		{% block header %}
+			{% include "layout/header-shared.html.twig" %}
+		{% endblock %}
+		{# END header #}
+		{# START Flash messages #}
+		<div class="container">
+			{% include "partials/_flash.html.twig" %}
+		</div>
+		{# END Flash messages #}
+		<main>
+			{# START body #}
+			{% block body %}{% endblock %}
+			{# END body #}
+		</main>
+		{# START footer #}
+		{% block footer %}
+			{% include "layout/footer.html.twig" %}
+		{% endblock %}
+		{# END footer #}
+		{# START scripts JS #}
+		{% block javascripts %}
+			<!-- bootstrap javascript -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+			<!-- leaflet javascript -->
+			<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+			<!-- -->
+			<script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('assets/js/components/registration.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('assets/js/components/userProfile.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('assets/js/components/mode.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('assets/js/map.js') }}"></script>
+		{% endblock %}
+		{# END scripts JS #}
+	</body>
+</html>

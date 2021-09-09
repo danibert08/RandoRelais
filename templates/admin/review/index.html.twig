@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des reviews -
+	{{parent()}}
+{% endblock %}
+
+{% block body %}
+	{% include "partials/_admin-aside.html.twig" %}
+
+	<div class=" my-5 admin w-100 ">
+		<h1 class="text-center mb-5">Liste des évaluations</h1>
+		<table id="mode" class="mode table table-striped text-center w-75 mx-auto">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Date</th>
+					<th scope="col">Auteur</th>
+					<th scope="col">Ange</th>
+					<th scope="col">Note</th>
+					<th scope="col">Commentaire</th>
+					<th scope="col">Statut</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% set i = 0 %}
+				{% for review in reviews %}
+					<tr>
+						<th scope="row">{{ review.id }}</th>
+						<td>{{ review.createdAt|date('Y-m-d H:i:s')}}</td>
+						
+							<td>
+								{{ authorList[i] }}
+							</td>
+						
+						<td>{{ review.user }}</td>
+						<td>{{ review.rating }}</td>
+						<td>{{ review.comment }}</td>
+						<td>{{ review.status == 0 ? 'A controler' : 'Validé' }}</td>
+
+						<td>
+							{% if review.status == 0  %}
+							<a href="{{ path('admin_review_approved', {'id': review.id}) }}"><i class="far fa-check-square btn btn-success"></i></a>
+			
+							{% endif %}
+							{{ include('admin/review/_delete_form.html.twig') }}
+						</td>
+					</tr>
+					{% set i = i + 1 %}
+				{% endfor %}
+
+			</tbody>
+		</table>
+
+
+	</div>
+{% endblock %}

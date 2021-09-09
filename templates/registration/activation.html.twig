@@ -1,0 +1,11 @@
+<img src="http://rando-relais.fr/assets/images/background/logo-rando-relais-128x70.png" alt="">
+
+<h1>Bonjour et bienvenue sur le site rando-relais!</h1>
+<p>Pour valider votre inscription sur Rando-Relais, veuillez cliquez sur le lien ci-dessous :</p>
+<p><a href="{{ absolute_url(path('activation', {'token': token})) }}">J'active mon compte</a></p>
+
+<p>Ce lien expirera dans 1 heure.</p>
+{# <p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p> #}
+<p>Bien à vous,</p>
+
+<p>L'équipe Rando-Relais</p>

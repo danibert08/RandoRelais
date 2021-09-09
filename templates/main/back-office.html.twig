@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+			{% set currentRoute = app.request.get('_route') %}
+
+			{% block header %}
+
+				{% if currentRoute == 'main' %}
+					{% include "layout/header-home.html.twig" %}
+				{% else %}
+					{% include "layout/header-shared.html.twig" %}
+				{% endif %}
+
+			{% endblock %}
+
+			{% block body %}
+				<div>
+					<a data-bs-target="#informationModal" data-bs-toggle="modal" type="button"><img class="custom-button d-md-block d-lg-none" src="{{asset('assets/images/service_icons/info.png')}}" alt="icone information"></a>
+				</div>
+				<section class="mb-5">
+					<div>
+						<h1 class="mt-5 text-center">Visite du Back-Office</h1>
+					</div>
+					<div class="container search">
+						Daniel, Alex, Aimerick et Timothy vous proposent de visiter le back-office de rando-relais.fr afin
+                  d'en décourvir les fonctionnalités.
+					</div>
+					<div class="text-center my-5">
+						<div class="container">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/qDdxj-9EfNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</section>
+			{% endblock %}

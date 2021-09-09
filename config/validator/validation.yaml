@@ -1,0 +1,13 @@
+App\Entity\Review:
+    properties:
+        rating:
+            - Range:
+                min: 0
+                max: 5
+                notInRangeMessage: Votre note doit être comprise entre {{ min }} et {{ max }}.
+        comment:
+            - Length:
+                min: 2
+                max: 500
+                minMessage: 'Votre commentaire doit avoir au moins {{ min }} charactères'
+                maxMessage: 'Votre commentaire doit faire au maximum {{ max }} charactères'

@@ -1,0 +1,26 @@
+<div class="d-flex flex-column mt-5  flex-xl-row ">
+	<aside class="align-self-xl-start text-center justify-content-center asidefixed">
+		<div class="d-flex  flex-column menufixed ">
+
+			<!-- button to show statistics page -->
+			<div>
+				<a type="button" href=" {{ path('admin_stat') }} " class="btn btn-success  decoration-none">Statistiques</a>
+			</div>
+
+			<!-- button to show services list-->
+			<div>
+				<a type="button" href=" {{ path('admin_service_index') }} " class="btn btn-success mt-5">Gestion des services</a>
+			</div>
+
+			<!-- button to show users list -->
+			<div>
+				<a type="button" href=" {{ path('admin_user_index') }} " class="btn btn-success mt-5">Gestion des utilisateurs</a>
+			</div>
+
+			<!-- button to access moderation -->
+			<div>
+				<a type="button" href=" {{ path('admin_review_index') }} " class="btn btn-success mt-5">Modération</a>
+			</div>
+			
+		</div>
+	</aside>

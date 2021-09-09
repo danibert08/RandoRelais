@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="306" height="349" view_box="0 0 306 349"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Tue, 27 Jul 2021 05:30:06</desc>
+
+<rect id="frame" x="0" y="0" width="306" height="349" fill="#ffffff" stroke="none" stroke-width="0"/>
+
+<!-- Association has -->
+<line x1="60" y1="128" x2="165" y2="306" stroke="#d6604d" stroke-width="2"/>
+<text x="116" y="211.030421451" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
+<line x1="60" y1="306" x2="165" y2="306" stroke="#d6604d" stroke-width="2"/>
+<text x="99" y="323.0" fill="#4d4d4d" font-family="Verdana" font-size="12">0,1</text>
+<g id="association-has">
+	<path d="M 169 281 a 14 14 90 0 1 14 14 V 306 h -36 V 295 a 14 14 90 0 1 14 -14" fill="#f4a582" stroke="#f4a582" stroke-width="0"/>
+	<path d="M 183 306.0 v 11 a 14 14 90 0 1 -14 14 H 161 a 14 14 90 0 1 -14 -14 V 306.0 H 36" fill="#fddbc7" stroke="#fddbc7" stroke-width="0"/>
+	<rect x="147" y="281" width="36" height="50" fill="none" rx="14" stroke="#d6604d" stroke-width="2"/>
+	<line x1="147" y1="306" x2="183" y2="306" stroke="#d6604d" stroke-width="1"/>
+	<text x="154" y="298.7" fill="#000000" font-family="Verdana" font-size="12">has</text>
+</g>
+
+<!-- Association offer -->
+<line x1="60" y1="128" x2="165" y2="128" stroke="#d6604d" stroke-width="2"/>
+<text x="116" y="120.0" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
+<line x1="258" y1="128" x2="165" y2="128" stroke="#d6604d" stroke-width="2"/>
+<text x="192" y="145.0" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-offer">
+	<path d="M 173 103 a 14 14 90 0 1 14 14 V 128 h -44 V 117 a 14 14 90 0 1 14 -14" fill="#f4a582" stroke="#f4a582" stroke-width="0"/>
+	<path d="M 187 128.0 v 11 a 14 14 90 0 1 -14 14 H 157 a 14 14 90 0 1 -14 -14 V 128.0 H 44" fill="#fddbc7" stroke="#fddbc7" stroke-width="0"/>
+	<rect x="143" y="103" width="44" height="50" fill="none" rx="14" stroke="#d6604d" stroke-width="2"/>
+	<line x1="143" y1="128" x2="187" y2="128" stroke="#d6604d" stroke-width="1"/>
+	<text x="150" y="120.7" fill="#000000" font-family="Verdana" font-size="12">offer</text>
+</g>
+
+<!-- Entity review -->
+<g id="entity-review">
+	<g id="frame-review">
+		<rect x="26" y="272" width="68" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="26" y="297.0" width="68" height="43" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="26" y="272" width="68" height="68" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="26" y1="297" x2="94" y2="297" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="39" y="289.7" fill="#000000" font-family="Verdana" font-size="12">review</text>
+	<text x="31" y="314.8" fill="#000000" font-family="Verdana" font-size="12">rating</text>
+	<text x="31" y="331.8" fill="#000000" font-family="Verdana" font-size="12">comment</text>
+</g>
+
+<!-- Entity user -->
+<g id="entity-user">
+	<g id="frame-user">
+		<rect x="9" y="9" width="102" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="9" y="34.0" width="102" height="213" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="9" y="9" width="102" height="238" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="9" y1="34" x2="111" y2="34" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="46" y="26.7" fill="#000000" font-family="Verdana" font-size="12">user</text>
+	<text x="14" y="51.7" fill="#000000" font-family="Verdana" font-size="12">role</text>
+	<text x="14" y="68.7" fill="#000000" font-family="Verdana" font-size="12">first_name</text>
+	<text x="14" y="85.7" fill="#000000" font-family="Verdana" font-size="12">last_name</text>
+	<text x="14" y="102.7" fill="#000000" font-family="Verdana" font-size="12">picture</text>
+	<text x="14" y="119.7" fill="#000000" font-family="Verdana" font-size="12">password</text>
+	<text x="14" y="136.8" fill="#000000" font-family="Verdana" font-size="12">city</text>
+	<text x="14" y="153.8" fill="#000000" font-family="Verdana" font-size="12">longitude</text>
+	<text x="14" y="170.8" fill="#000000" font-family="Verdana" font-size="12">latitude</text>
+	<text x="14" y="187.8" fill="#000000" font-family="Verdana" font-size="12">zip_code</text>
+	<text x="14" y="204.8" fill="#000000" font-family="Verdana" font-size="12">email</text>
+	<text x="14" y="221.8" fill="#000000" font-family="Verdana" font-size="12">phone_number</text>
+	<text x="14" y="238.8" fill="#000000" font-family="Verdana" font-size="12">status</text>
+</g>
+
+<!-- Entity service -->
+<g id="entity-service">
+	<g id="frame-service">
+		<rect x="219" y="86" width="78" height="25" fill="#bababa" stroke="#bababa" stroke-width="0"/>
+		<rect x="219" y="111.0" width="78" height="59" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0"/>
+		<rect x="219" y="86" width="78" height="84" fill="none" stroke="#878787" stroke-width="2"/>
+		<line x1="219" y1="111" x2="297" y2="111" stroke="#878787" stroke-width="1"/>
+	</g>
+	<text x="236" y="103.7" fill="#000000" font-family="Verdana" font-size="12">service</text>
+	<text x="224" y="128.8" fill="#000000" font-family="Verdana" font-size="12">name</text>
+	<text x="224" y="145.8" fill="#000000" font-family="Verdana" font-size="12">picture</text>
+	<text x="224" y="162.8" fill="#000000" font-family="Verdana" font-size="12">description</text>
+</g>
+</svg>

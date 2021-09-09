@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition d'un utilisateur - {{parent()}}{% endblock %}
+
+{% block body %}
+{% include "partials/_admin-aside.html.twig" %}
+<div class="admin w-75 my-5">
+    <h1 class="text-center mb-5">Modifier {{user.firstname}} {{user.lastname}}</h1>
+
+    {{ include('admin/user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+</div>
+{% endblock %}

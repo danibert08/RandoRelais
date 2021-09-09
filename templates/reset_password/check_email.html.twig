@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Mot de passe oublié{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 mb-5">
+    <h2 class="mb-5 text-center">Email de réinitialisation de mot de passe envoyé ! </h2>
+        <p>
+            Si un compte correspondant à votre adresse email existe, 
+            vous recevrez un email très prochainement contenant un lien pour réinitialiser votre mot de passe.
+        </p>
+        <p>
+            Ce lien expirera dans 1 heure.
+        </p>
+        <p>
+            <strong>
+                Si vous ne recevez pas cet email, veuillez s'il vous plaît vérifier votre dossier "Spam",
+                ou
+            </strong> 
+            <a href="{{ path('app_forgot_password_request') }}">réessayer</a>
+        </p>
+    </div>
+{% endblock %}

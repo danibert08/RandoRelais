@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+			{% block title %}Liste des services - {{parent()}}
+			{% endblock %}
+
+			{% block body %}
+			{% include "partials/_admin-aside.html.twig" %}
+		
+				<div class="container my-5 admin w-75 ">
+					<h1 class="text-center mb-5">Liste des services</h1>
+					<div class="d-grid w-75 mx-auto d-md-flex justify-content-md-end mb-3">
+						<a role="button" class="btn btn-success " href="{{ path('admin_service_new') }}">Ajouter un service</a>
+					</div>
+					<table id="mode" class="mode table table-striped text-center w-75 mx-auto">
+						<thead>
+							<tr>
+								<th scope="col">Id</th>
+								<th scope="col">Nom</th>
+								<th scope="col">Image</th>
+								<th scope="col">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for service in services %}
+							
+								<tr>
+									<th scope="row">{{ service.id }}</th>
+								
+					
+							<td>{{ service.name }}</td>
+
+							<td class=>{{ service.image}}</td>
+							
+
+							<td>
+								<a  role="button" class="btn mb-1 btn-success" href="{{ path('admin_service_show', {'id': service.id}) }}">Voir</a>
+								<a role="button" class="btn mb-1 btn-success"  href="{{ path('admin_service_edit', {'id': service.id}) }}">Editer</a>
+							</td>
+
+							</tr>
+						
+				
+				{% else %}
+					<tr>
+						<td colspan="7">No records found</td>
+					</tr>
+
+				{% endfor %}
+
+			</tbody>
+		</table>
+
+
+	</div>
+{% endblock %}

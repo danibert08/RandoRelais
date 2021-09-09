@@ -1,0 +1,60 @@
+<div class="my-3 col-lg-6 mx-auto">
+{{ form_start(form) }}
+    {{form_row(form.firstName, {
+        'label' : 'Prénom'
+    })}}
+
+    {{form_row(form.lastName, {
+        'label' : 'Nom'
+    })}}
+
+    {{form_row(form.email, {
+        'label' : 'Adresse e-mail'
+    })}}
+
+    {% if user.id == null %}
+    {{form_row(form.password, {
+        'label' : 'Mot de passe'
+    })}}
+    {% endif %}
+
+    {{form_row(form.city, {
+        'label' : 'Commune'
+    })}}
+
+    {{form_row(form.zipCode, {
+        'label' : 'Code postal'
+    })}}
+
+    {{form_row(form.phoneNumber, {
+        'label' : 'Numéro de téléphone'
+    })}}
+
+    {{form_row(form.picture, {
+        'label' : 'Avatar'
+    })}}
+
+    {{form_row(form.roles, {
+        'label' : 'Choisisez un ou plusieurs rôles'
+    })}}
+
+    {{form_row(form.status, {
+        'label' : 'Marcheur : 1 / Ange : 2 / Désactivé : 0'
+    })}}
+
+    {{form_row(form.services, {
+        'label' : 'Choisisez un ou plusieurs services'
+    })}} 
+
+                <div class="d-flex justify-content-center mb-5 ">
+                    <div class="mx-3">
+                        <a role="button" class="btn btn-success" href="{{ path('admin_user_index') }}">Liste des utilisateurs</a>
+                    </div>   
+                    <!-- Submit -->
+                    <div class="mx-3">                      
+                        <button type="submit" class="btn  btn-success w-100 mb-3">{{ button_label }}</button>
+                    </div>
+                </div>
+
+{{ form_end(form) }}
+</div>

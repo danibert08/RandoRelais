@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+			{% block header %}
+
+				{% if app.user %}
+					{% include "layout/header-shared.html.twig" %}
+				{% else %}
+					{% include "layout/header-home.html.twig" %}
+				{% endif %}
+
+			{% endblock %}
+
+			{% block body %}
+				<div>
+					<a data-bs-target="#informationModal" data-bs-toggle="modal" type="button"><img class="custom-button d-md-block d-lg-none" src="{{asset('assets/images/service_icons/info.png')}}" alt="icone information"></a>
+				</div>
+				<section class="mb-5">
+					<div>
+						<h1 class="mt-5 text-center">Marcher & Partager</h1>
+					</div>
+					<div>
+						{% include "partials/_search-filter.html.twig" %}
+					</div>
+					<div class="album py-5">
+						<div class="container-fluid ">
+							<div
+								class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 align-items-stretch g-4 py-5 ">
+								<!-- Angel Card-->
+								{% for angel in angels %}
+								{% if angel.getStatus() == 2 %}
+									<div class="col">
+										<a href="{{ app.user ? path('show_angel', {id: angel.id}) : path('app_login') }}" class="nav-link">
+											<div class="card card-cover overflow-hidden bg-success rounded-5 shadow-lg opacity-85 zoomimg" style="height: 25rem; background-image: url('assets/images/background/rando{{ random(40 , 94) }}.jpg'); background-position: center; background-size: cover;">
+												<div class="d-flex flex-column h-100 p-5 text-shadow-1">
+													<div class="text-center">
+														<img src="{{ asset('assets/uploads/' ~ angel.picture) }}" alt="Bootstrap" width="80" height="80" class=" rounded-circle border border-white">
+													</div>
+													<h2 class="mt-5 display-6 lh-1 fw-bold text-white text-center text-custom-shadow">{{ angel.firstName | capitalize}}</h2>
+													<p class="mb-5 lh-1 fw-bold text-white text-center text-custom-shadow" style="font-size: 1.7rem">{{ angel. zipCode }} · {{ angel.city }}</p>
+													<ul class="d-flex list-unstyled text-center mt-auto">
+														<li class="me-auto"></li>
+														<li class="me-auto">
+															{% for service in angel.services %}
+																<img src="{{ asset('assets/uploads/' ~ service.image) }}" class="mx-2 rounded-circle border border-white" alt="{{ service.name }}" width="50px">
+															{% endfor %}
+														</li>
+													</ul>
+												</div>
+											</div>
+										</a>
+									</div>
+									{% endif %}
+								{%  endfor %}
+								<!-- End Angel Card-->
+							</div>
+						</div>
+					</div>
+				</section>
+			{% endblock %}

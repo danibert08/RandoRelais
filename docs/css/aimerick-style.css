@@ -1,0 +1,219 @@
+/* START `body` */
+body {
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Open Sans Font";
+  color: #333;
+}
+
+/* When mode = Dark */
+.dark {
+  color: #fff;
+  background-color: #2a2a2e;
+}
+
+/* When mode = White */
+.white {
+  color: #2a2a2e;; 
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2,
+h3 {
+  font-size: 2.5em;
+}
+
+.h-white {
+  color: #fff;
+}
+
+.h-black {
+  color: #2a2a2e;
+}
+
+.white {
+  color: #fff;
+}
+/* END `body` */
+
+/* START `header` */
+.header-home {
+  background-image: url("../images/background/background-header.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.header-shared {
+  background-image: url("../images/background/background-header.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+}
+
+.container-nav {
+  position: relative;
+  top: 2em;
+}
+
+#navbar_color_transparent {
+  background-color: rgba(134, 134, 134, 0.3);
+}
+
+/* Dark & light mode toggle */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background-color: #fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #fff;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.header-icons {
+  width: 15%;
+}
+/* END `header` */
+
+/* START page `user_profil` */
+/* Toggle for swtich status */
+/* The switch - the box around the slider */
+.switch-status {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch-status input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider-status {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.slider-status:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input:checked + .slider-status {
+  background-color: green;
+}
+
+input:focus + .slider-status {
+  box-shadow: 0 0 1px #fff;
+}
+
+input:checked + .slider-status:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider-status.round-status {
+  border-radius: 34px;
+}
+
+.slider-status.round-status:before {
+  border-radius: 50%;
+}
+
+.services-icons {
+  cursor: pointer;
+}
+
+.form-control::placeholder {
+  color: #333;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+/* END page `user_profil` */

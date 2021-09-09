@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<!-- Teammate information card -->
+	<div class="team-page">
+		<div class="team-page_group">
+			<div class="team-card-container">
+				<div class="team-card animation">
+					<!-- picture on front -->
+					<figure class="front"><img src="{{asset('assets/images/profile_picture/daniel.png')}}"></figure>
+					<!-- information about teammate on back -->
+					<figure class="back">
+						<ul class="list-style p-0">
+							<li class="fw-bold">Daniel</li>
+							<li>Product Owner</li>
+							<li>contact@daniel-dev.me</li>
+							<li>Bourges</li>
+						</ul>
+					</figure>
+				</div>
+			</div>
+			<!-- Teammate information card -->
+			<div class="team-card-container">
+				<div class="team-card animationTwo">
+					<!-- picture on front -->
+					<figure class="front"><img src="{{asset('assets/images/profile_picture/alex.png')}}"></figure>
+					<!-- information about teammate on back -->
+					<figure class="back">
+						<ul class="list-style p-0">
+							<li class="fw-bold">Alex</li>
+							<li>Git & Scrum master</li>
+							<li>La Rochelle</li>
+						</ul>
+					</figure>
+				</div>
+			</div>
+			<!-- Teammate information card -->
+			<div class="team-card-container">
+				<div class="team-card animationThree">
+					<!-- picture on front -->
+					<figure class="front"><img src="{{asset('assets/images/profile_picture/aimerick.png')}}"></figure>
+					<!-- information about teammate on back -->
+					<figure class="back">
+						<ul class="list-style p-0">
+							<li class="fw-bold">Aimerick</li>
+							<li>Lead Dev Back</li>
+							<li>feralaimerick@gmail.com</li>
+							<li>Paris</li>
+						</ul>
+					</figure>
+				</div>
+			</div>
+			<!-- Teammate information card -->
+			<div class="team-card-container">
+				<div class="team-card animationFour">
+					<!-- picture on front -->
+					<figure class="front"><img src="{{asset('assets/images/profile_picture/timothy.png')}}"></figure>
+					<!-- information about teammate on back -->
+					<figure class="back">
+						<ul class="list-style p-0">
+							<li class="fw-bold">Timothy</li>
+							<li>Lead Dev Front</li>
+							<li>timothy.gomis@gmail.com</li>
+							<li>La Réunion</li>
+						</ul>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

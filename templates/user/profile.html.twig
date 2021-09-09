@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Profil
+	{{ app.user.firstName }}
+	-
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<div class="mb-3 mt-3 col-lg-6 mx-auto">
+		<h2 class="text-center mt-3">{{ app.user.firstName }}</h2>
+		<p class="text-center">Actuellement je suis :
+			{{ status }}
+		</p>
+	</div>
+	<div
+		class="mb-3 col-lg-6 mx-auto">
+		{# Registration form #}
+		{{ form_start(UserProfileForm, {'attr': {'novalidate': 'novalidate'}}) }}
+		{# After a click on the switch the status switch form 1 => "Marcheur" to 2 => "Angel"#}
+		<div class="mb-3 col-lg-6 mx-auto">
+			<div class="form-switch form-switch d-flex justify-content-center">
+				{{ form_row(UserProfileForm.currentStatus) }}
+			</div>
+		</div>
+		<div class="d-flex justify-content-center mb-4">
+			<img src="{{ asset('assets/uploads/' ~ app.user.picture) }}" class="img-fluid w-25 rounded-circle align-self-center" alt="photo de profil"/>
+		</div>
+		<div class="col-lg-6 mx-auto">
+		{# TODO START : Form not working. #}
+			{# <form action="{{ path('user_delete_picture', {id:app.user.id}) }}" method="post">
+				<input type="hidden" name="_method" value="DELETE">
+				<input type="hidden" name="token" value="{{ csrf_token('user_delete_picture' ~ app.user.id) }}">
+				<button class="btn btn-danger w-100 mb-3 d-none" id="delete-picture-button">Supprimer ma photo</button>
+			</form> #}
+		{# TODO END. #}
+			<a class="btn btn-danger w-100 mb-3 d-none" id="delete-picture-button" href="{{ path('user_delete_picture', {id:app.user.id, token:csrf_token('user-delete-picture' ~ app.user.id)}) }}">Supprimer ma photo</a>
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(UserProfileForm.upload) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(UserProfileForm.firstName) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(UserProfileForm.lastName) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(UserProfileForm.email) }}
+		</div>
+		<div
+			class="mb-3 col-lg-6 mx-auto">{# {{ form_row(UserProfileForm.plainPassword) }} #}
+		</div>
+		{# Angel Data #}
+		{# After a click on the switch the status switch form 1 => ("Marcheur" to 2 => "Angel") and we display the angel data. #}
+		<div class="d-none" id="angel_subscription_form">
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(UserProfileForm.phoneNumber) }}
+			</div>
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(UserProfileForm.zipCode) }}
+			</div>
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(UserProfileForm.city) }}
+			</div>
+			{# Services icons #}
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(UserProfileForm.services) }}
+			</div>
+		</div>
+		{# Submit buttom #}
+		<div class="col-lg-6 mx-auto">
+			<button type="button" class="btn btn-warning w-100 mb-3" id="modify-button">Modifier</button>
+			{# Submit button for backup the update of the user profil #}
+			<button type="submit" class="btn btn-success w-100 mb-3 d-none" id="save-button">Enregistrer</button>
+			{{ form_rest(UserProfileForm) }}
+			{{ form_end(UserProfileForm) }}
+			<form action="{{ path('user_deactivate', {id:app.user.id}) }}" method="post">
+				<input type="hidden" name="_method" value="PATCH">
+				<input type="hidden" name="token" value="{{ csrf_token('user-deactivate' ~ app.user.id) }}">
+				<button class="btn btn-danger w-100 mb-3 d-none" id="delete-button">Supprimer</button>
+			</form>
+			{# <a class="btn btn-danger w-100 mb-3 d-none" id="delete-button" href="{{ path('user_delete', {id:app.user.id, token:csrf_token('delete-user' ~ app.user.id)}) }}">Supprimer mon compte</a> #}
+		</div>
+	</div>
+{% endblock %}

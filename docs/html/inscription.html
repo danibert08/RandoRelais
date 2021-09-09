@@ -1,0 +1,201 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../rando-relais/alex-style.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Subscribe title  -->
+        <h2 class="text-center mt-3">Inscription</h2>
+        <!-- Connection form -->
+        <form>
+            <!-- Toogle button -->
+            <div class="form-check form-switch d-flex justify-content-center">
+                <input class="form-check-input" type="checkbox" id="flexSwitchAngel">
+                <label class="form-check-label" for="flexSwitchAngel">S'inscrire en tant qu'ange du chemin</label>
+            </div>
+            <!-- Email -->
+            <div class="mb-3 mt-3 col-lg-6 mx-auto">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <!-- Password -->
+            <div class="mb-3 col-lg-6 mx-auto">
+                <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+            </div>
+            <!-- Password confirmation -->
+            <div class="mb-3 col-lg-6 mx-auto">
+                <input type="password" class="form-control" id="password_confirmation"
+                    placeholder="Confirmez votre mot de passe">
+            </div>
+            <!-- Last name -->
+            <div class="mb-3 col-lg-6 mx-auto">
+                <input type="text" class="form-control" id="last_name" placeholder="Nom">
+            </div>
+            <!-- First name -->
+            <div class="mb-3 col-lg-6 mx-auto">
+                <input type="text" class="form-control" id="first_name" placeholder="Prénom">
+            </div>
+            <!-- Phone number -->
+            <div class="mb-3 col-lg-6 mx-auto">
+                <input type="tel" class="form-control" id="phone_number" placeholder="Numéro de téléphone">
+            </div>
+            <!-- Angels part -->
+            <div class="d-none" id="angel_subscription_form">
+                <!-- Zip code -->
+                <div class="mb-3 col-lg-6 mx-auto">
+                    <input type="text" class="form-control" id="zip_code" placeholder="Code postal" pattern="[0-9]*">
+                </div>
+                <!-- City -->
+                <div class="mb-3 col-lg-6 mx-auto">
+                    <input type="text" class="form-control" id="city" placeholder="Commune">
+                </div>
+                <!-- Services -->
+                <!-- TODO START : div pour boucle twig. Afin que le getElementById() du JS fonctionne dans la boucle twig il faut que l'id du serice soit id="{{ service.slug }}"  -->
+                <div class="row justify-content-center">
+                    <!-- Tent -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="tent_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="tent_checkbox"
+                            id="tent_checkbox">
+                        <label for="tent"><img src="../icons/tent.png" alt="tente" class="rounded-circle w-25 "></label>
+                        <p>
+                            Emplacement tente
+                            <img src="" id="" class="d-none">
+                        </p>
+                    </div>
+                    <!-- Shower -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="shower_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="shower_checkbox"
+                            id="shower_checkbox">
+                        <label for="shower"><img src="../icons/shower.png" alt="douche"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Douche
+                            <img src="../icons/validate-20x20.png" id="validate_shower" class="d-none">
+                        </p>
+                    </div>
+                    <!-- Breakfast -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="breakfast_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="breakfast"
+                            id="breakfast_checkbox">
+                        <label for="breakfast"><img src="../icons/breakfast.png " alt="petit déjeuner"
+                                class="rounded-circle w-25"></label>
+                        <p>Petit déjeuner
+                            <img src="../icons/validate-20x20.png" id="validate_breakfast" class="d-none">
+                        </p>
+                    </div>
+                </div>
+                 <!-- TODO END : end of the <div> -->
+                <div class="row justify-content-center">
+                    <!-- Bedroom -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="bedroom_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="bedroom"
+                            id="bedroom_checkbox">
+                        <label for="bedroom"><img src="../icons/beedroom.png" alt="chambre"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Chambre
+                            <img src="../icons/validate-20x20.png" id="validate_bedroom" class="d-none">
+                        </p>
+                    </div>
+                    <!-- Delivery -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="delivery_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="delivery"
+                            id="delivery_checkbox">
+                        <label for="delivery"><img src="../icons/delivery.png" alt="colis"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Colis
+                            <img src="../icons/validate-20x20.png" id="validate_delivery" class="d-none">
+                        </p>
+                    </div>
+                    <!-- Sandwich -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="sandwich_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="sandwich"
+                            id="sandwich_checkbox">
+                        <label for="sandwich"><img src="../icons/sandwich.png" alt="sandwich"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Sandwich
+                            <img src="../icons/validate-20x20.png" id="validate_sandwich" class="d-none">
+                        </p>
+                    </div>
+                </div>
+                <!-- Dinner -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="dinner_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="dinner"
+                            id="dinner_checkbox">
+                        <label for="dinner"><img src="../icons/diner.png" alt="dîner"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Dîner
+                            <img src="../icons/validate-20x20.png" id="validate_dinner" class="d-none">
+                        </p>
+                    </div>
+                    <!-- Shelter -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="shelter_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="shelter"
+                            id="shelter_checkbox">
+                        <label for="shelter"><img src="../icons/shelter.png" alt="abri"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Abri
+                            <img src="../icons/validate-20x20.png" id="validate_shelter" class="d-none">
+                        </p>
+                    </div>
+                    <!-- Water -->
+                    <div class="col-lg-2 col-md-4 text-center opacity-50" id="water_service">
+                        <input class="form-check-input align-middle d-none" type="checkbox" name="water"
+                            id="water_checkbox">
+                        <label for="water"><img src="../icons/water.png" alt="eau" class="rounded-circle w-25"></label>
+                        <p>
+                            Eau
+                            <img src="../icons/validate-20x20.png" id="validate_water" class="d-none">
+                        </p>
+                    </div>
+                </div>
+                <!-- Power -->
+                <div class="row justify-content-center opacity-50" id="power_service">
+                    <div class="col-lg-2 col-md-4 text-center d-none">
+                        <input class="form-check-input align-middle" type="checkbox" name="power" id="power_checkbox">
+                        <label for="power"><img src="../icons/power.png" alt="électricité"
+                                class="rounded-circle w-25"></label>
+                        <p>
+                            Electricité
+                            <img src="../icons/validate-20x20.png" id="validate_power" class="d-none">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Submit -->
+            <div class="col-lg-6 mx-auto">
+                <button type="submit" class="btn btn-success w-100 mb-3">Créer un compte</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="../rando-relais/app.js"></script>
+    <script type="text/javascript" src="../rando-relais/angelRegistration.js"></script>
+    <script type="text/javascript" src="../rando-relais/switchToAngel.js"></script>
+
+ 
+</body>
+
+</html>

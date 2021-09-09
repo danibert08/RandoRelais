@@ -1,0 +1,104 @@
+{# START nav #}
+			<div class="container-nav">
+				<nav id="navbar_color_transparent" class="navbar navbar-expand-lg navbar-dark p-2">
+					
+					<div class="container-fluid">
+						<a class="navbar-brand me-4" href="{{ path("main") }}"><img class="rando-relais-logo m-auto w-100" src="{{ asset('assets/images/background/logo-rando-relais-128x70.png') }}" alt=""/></a>
+						
+						<label class="switch m-2">
+							<input type="checkbox" id="switch-mode-checkbox"/>
+							<span class="slider round"></span>
+						</label>
+					
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						
+						<div class="collapse ms-3 navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<li class="nav-item ">
+									<a class="nav-link btn active" aria-current="page" href="{{ path("main")}}">
+										<i class="fas  fa-home"></i>
+											 Accueil
+									</a>
+								</li>
+								<li class="nav-item">
+									<a  class="nav-link  btn" data-bs-toggle="modal" data-bs-target="#informationModal">
+										<i class="fas  fa-info-circle"></i>
+											 Information
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link  btn" href="{{ path('main_download') }}">
+										<i class="fas fa-upload"></i>
+											 Télécharger calendrier
+									</a>
+								</li>
+							</ul>
+							<ul
+								class="navbar-nav me-4 mb-md-0">
+								{# If the user is logged in #}
+								{% if app.user %}
+									<li class="nav-item dropdown">
+										<a
+											class="nav-link dropdown-toggle  btn-success fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											{# We display the first name of the user logged in #}
+											Bonjour
+											{{ app.user.firstname }}
+										</a>
+										<ul
+											class="dropdown-menu" aria-labelledby="navbarDropdown">
+											{# TODO Mettre à jour les liens vers la page profil et compte utilisateur#}
+											<li>
+												<a class="dropdown-item" href="{{ path('user_profile', {'id': app.user.id})}}">Gérer mon profil</a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="{{ path('review_made-list' )}}">Voir mes évaluations déposées</a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="{{ path('review_received-list') }}">Voir mes évaluations reçues</a>
+											</li>
+											{# TODO Décommenter les blocs "if" et "endif" quand les permissions seront opérationnelles #}
+											{% if is_granted('ROLE_ADMIN') %}
+											<li>
+												<hr class="dropdown-divider"/>
+											</li>
+											<li>
+												<a class="dropdown-item" href="{{ path('admin_stat') }}">Statistiques</a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="{{ path('admin_service_index') }}">Gestion des services</a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="{{ path('admin_user_index') }}">Gestion des utilisateurs</a>
+											</li>
+											<li>
+												<a class="dropdown-item" href="{{ path('admin_review_index') }}">Modération</a>
+											</li>
+											{% endif %}
+											<li>
+												<hr class="dropdown-divider"/>
+											</li>
+											{# Logout button #}
+											<li>
+												<a class="dropdown-item" href="{{ path("app_logout")}}">Déconnexion</a>
+											</li>
+										</ul>
+									</li>
+									{# Else : the user is not logged in #}
+								{% else %}
+									{# We display the login button #}
+									<li class="nav-item">
+										<a class="btn btn-danger" aria-current="page" href="{{ path("app_login")}}">Se connecter</a>
+									</li>
+									<li class="nav-item ms-2">
+										<a class="btn btn-success" aria-current="page" href="{{ path("app_register")}}">Créer un compte</a>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			{# END nav #}

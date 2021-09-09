@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Inscription -
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<div
+		class="mb-3 mt-3 col-lg-6 mx-auto">
+		{# Subscribe title #}
+		<h2 class="text-center mt-3">Inscription</h2>
+		{# Registration form #}
+		{{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+		{# After a click on the switch the status switch form 1 => "Marcheur" to 2 => "Angel"#}
+		<div class="form-switch form-switch d-flex justify-content-center">
+			{{ form_row(registrationForm.status) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(registrationForm.picture) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(registrationForm.firstName) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(registrationForm.lastName) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(registrationForm.email) }}
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(registrationForm.plainPassword) }}
+		</div>
+		{# Angel Data #}
+		{# After a click on the switch the status switch form 1 => ("Marcheur" to 2 => "Angel") and we display the angel data. #}
+		<div class="d-none" id="angel_subscription_form">
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(registrationForm.phoneNumber) }}
+			</div>
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(registrationForm.zipCode) }}
+			</div>
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(registrationForm.city) }}
+			</div>
+			{# Services icons #}
+			<div class="mb-3 col-lg-6 mx-auto">
+				{{ form_row(registrationForm.services) }}
+			</div>
+		</div>
+		<div class="mb-3 col-lg-6 mx-auto">
+			{{ form_row(registrationForm.agreeTerms) }}
+		</div>
+		{# Submit buttom #}
+		<div class="col-lg-6 mx-auto">
+			<button type="submit" class="btn btn-success w-100 mb-3">Créer un compte</button>
+			{{ form_end(registrationForm) }}
+		</div>
+	</div>
+{% endblock %}

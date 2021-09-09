@@ -1,0 +1,21 @@
+{{form_start(form)}}
+<div class="d-flex flex-column align-items-center">
+	<h4 class="mb-3">Recherche par ville ou code postal</h4>
+	<div class="d-flex justify-content-center">
+		<div class="me-3">
+			{{form_row(form.city, {'attr' : {'class': 'text-opacity-50'}})}}
+		</div>
+		<div class="me-3">
+			{{form_row(form.zipCode, {'attr' : {'class': 'text-opacity-50'}})}}
+		</div>
+		<div class="dropdown">
+			<button class="btn drop-filter-service dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				Ajouter un filtre par service
+			</button>
+			<ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton1">
+				{{form_row(form.service, {'attr' : {'class': 'checkbox'}})}}
+			</ul>
+		</div>
+</div>
+<button type="submit" class="btn btn-success">Filtrer</button>
+{{form_end(form)}}

@@ -1,0 +1,61 @@
+
+
+
+
+#bg404{
+  font:12px "Open Sans",sans-serif;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #aee6a5;
+  
+}
+
+#bg404 a{
+  color:#1FC14A;
+  font-size: 3em;
+  text-decoration:none;
+  outline:none;
+  transition:all 0.25s;
+}
+
+.containererror {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  max-width: 90vmin;
+  max-height: 80vmin;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+}
+
+.containererror p{
+  margin-top: 2em;
+  text-align: center;
+}
+
+
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.moko-404__a{fill:#5aaf23}
+.moko-404__b{fill:#70cf32}
+.moko-404__c{fill:#8fea54}
+.moko-404__d{fill:#60723C}
+.moko-404__e{fill:#A6F10D}
+.moko-404__f{fill:#1FC14A}
+.moko-404__g{fill:#0D9B33}
+.moko-404__h{fill:#61b729}
+.moko-404__i{fill:#5bc92d}
+.moko-404__j{fill:#0D9B33}
+.moko-404__k{fill:#2d3033}
+.moko-404__l{fill:#6c7279}
+.moko-404__m{fill:#118301}
+ 

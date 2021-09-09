@@ -1,0 +1,72 @@
+/* COMMON TO ALL PAGE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #ededed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* for remove points to list */
+.list-style {
+    list-style-type: none;
+}
+
+/* dark mode class */
+.dark {
+    color: #fff;
+    background-color: #2a2a2e;
+}
+
+/* ANGELS INFORMATION PAGE */
+.avatar-size {
+    width: 10em;
+    height: 10em;
+}
+
+.logo-service {
+    width: 4em;
+}
+
+/* MODAL INFORMATION */
+
+/* information button style for mobil */
+.custom-button {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: 2.5em;
+    right: 2em;
+}
+
+.modal-opacity {
+    background-color: rgba(120, 145, 64, 0.4);
+}
+
+.modal-color {
+    background-color: rgb(25, 135, 84);
+    color: white;
+}
+
+@media (min-width: 600px) {
+
+    /* to hide the information button when in desktop */
+    .hide {
+        display: none;
+    }
+
+}

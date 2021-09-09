@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Connexion | 
+        
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        {# Custom login form #}
+        <div class="container">
+            <!-- Connection title  -->
+            <h2 class="text-center mt-3">
+                Connexion               
+            </h2>
+            <!-- Connection card (image)  -->
+            <div class="card mb-5 mt-3" id="connection-form">
+                <div class="row g-0">
+                    <!-- Card Left part -->
+                    <div class="col-md-4">
+                        <img src="{{ asset('assets/images/background/rando1.jpg') }}" class="img-fluid rounded-start"></div>
+                        <!-- Card Right Part (connection form) -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <form>
+                                    <!-- Email -->
+                                    <div class="mb-3 mt-3 mx-auto">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email"></div>
+                                        <!-- Password -->
+                                        <div class="mb-3  mx-auto">
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe"></div>
+                                            {# CSRF #}
+                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                                <!-- Submit -->
+                                                <div class="mx-auto">
+                                                    <button type="submit" class="btn btn-success w-100 mb-3">
+                                                        Se connecter                                          
+                                                    </button>
+                                                </div>
+                                                <!-- Annotation -->
+                                                <p class="text-center mt-2">
+                                                    <a href="{{ path('app_register') }}" class="text-decoration-none text-success" id="create-account">
+                                                        Créer un compte                                               
+                                                    </a> 
+                                                    <span id="pipe">|</span>
+                                                    <a href="{{ path('app_forgot_password_request') }}" class="text-decoration-none text-success" id="lost-password">
+                                                        Mot de passe oublié ?
+                                                    </a>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    {# Symfony Default login form, keep it here as we are in development for examples #}
+                    {#  <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+                                            <label for="inputEmail">Email</label>
+                                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                            <label for="inputPassword">Password</label>
+                                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                                        
+                                            <input type="hidden" name="_csrf_token"
+                                                   value="{{ csrf_token('authenticate') }}"
+                                            > #}
+
+                    {#
+                                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                                See https://symfony.com/doc/current/security/remember_me.html
+                                        
+                                                <div class="checkbox mb-3">
+                                                    <label>
+                                                        <input type="checkbox" name="_remember_me"> Remember me
+                                                    </label>
+                                                </div>
+                                            #}
+                    {# 
+                                            <button class="btn btn-lg btn-primary" type="submit">
+                                                Sign in
+                                            </button> #}
+                </form>
+                {% endblock %}

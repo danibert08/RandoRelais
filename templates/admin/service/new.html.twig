@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Service - {{parent()}}{% endblock %}
+
+{% block body %}
+{% include "partials/_admin-aside.html.twig" %}
+		
+				<div class="container admin w-75 mt-5">
+    <h1 class="text-center">Créer un nouveau service</h1>
+
+    {{ include('admin/service/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+    
+</div>
+{% endblock %}

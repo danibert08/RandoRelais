@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container text-center my-5">
+   <h2 class="mb-5">{{ app.user.firstName | capitalize }}, voici les évaluations que vous avez reçues :</h1>
+   {% if reviews[0] is not defined %}
+      Vous n'avez reçu aucune évaluation pour le moment.
+   {% else %}
+      {# List of all the reviews of the user #}
+      <ul class="mt-4 row list-unstyled">
+         {% set i = 1 %}
+         {% for review in reviews %}
+         {# Card #}
+            <li>
+               <div class="card text-dark bg-light mb-3" style="">
+                  <div class="card-header">
+                     <h4>     
+                     {# Default badge color: grey. 
+                        Rating = 5 : green
+                        Rating = 3 : grey
+                        Rating >= 1 && <= 2 : orange
+                        Rating = 0 : red
+                     #}
+                     {% set badgeType = 'badge bg-secondary' %}
+                     {% if  review.rating == 5 %}
+                        {% set badgeType = 'badge bg-success' %}
+                     {% elseif review.rating >= 1 and review.rating <= 2 %}
+                        {% set badgeType = 'badge bg-warning' %}
+                     {% elseif review.rating == 3  %}
+                        {% set badgeType = 'badge bg-secondary' %}
+                     {% elseif review.rating == 0 %}
+                        {% set badgeType = 'badge bg-danger' %}
+                     {% endif %}
+                     <span class="{{ badgeType }}">{{review.rating}}/5</span>
+                  </h4>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">
+                        <small>De</small>
+                        {{ authorNameArray[i] }}
+                     </h5>
+                     <p class="card-text">{{review.comment}}</p>
+                  </div>
+               </div>
+            </li>
+            {% set i = i + 1 %}
+         {% endfor %}
+   </ul>
+   {% endif %}
+</div>
+{% endblock %}

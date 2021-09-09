@@ -1,0 +1,20 @@
+{# START header-home #}
+<header class="header-home">
+{# Inclusion of the nav #}
+{% include "partials/_nav.html.twig" %}
+	<div class="mt-5 d-flex flex-column position-absolute top-50 start-50 translate-middle">
+	
+			<div class="typewriter">
+				<h1 class="h-white text-center text-nowrap text-custom-shadow">Bienvenue sur le site Rando Relais</h1>
+			</div>
+	
+		<div class="container container-icons mt-5 d-flex justify-space-between">
+			<img class="img-fluid m-auto header-icons" src="{{ asset('assets/images/service_icons/tent.png') }}" alt=""/>
+			<img class="img-fluid  header-icons" src="{{ asset('assets/images/service_icons/water.png') }}" alt=""/>
+			<img class="img-fluid me-auto header-icons" src="{{ asset('assets/images/service_icons/bedroom.png') }}" alt=""/>
+			<img class="img-fluid m-auto header-icons" src="{{ asset('assets/images/service_icons/breakfast.png') }}" alt=""/>
+			<img class="img-fluid m-auto header-icons" src="{{ asset('assets/images/service_icons/sandwich.png') }}" alt=""/>
+		</div>
+	</div>
+</header>
+{# END header-home #}

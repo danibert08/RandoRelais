@@ -1,0 +1,790 @@
+/**** COMMON TO ALL PAGE ****/
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-size: 16px;
+   font-family: 'Open Sans', sans-serif;
+}
+
+body {
+   background-color: #ededed;
+   color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+   font-size: 4em;
+}
+
+h2 {
+   font-size: 2.5em;
+}
+
+/* for remove points to list */
+.list-style {
+   list-style-type: none;
+}
+
+/* search bar size */
+.search {
+   width: 30em;
+}
+
+/**** HEADER ****/
+
+.header-home {
+   background-image: url("../images/background/background-header.jpg");
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+}
+
+.header-shared {
+   background-image: url("../images/background/background-header.jpg");
+   background-size: cover;
+   background-position: center;
+   height: 50vh;
+}
+
+.header-icons {
+   width: 15%;
+   opacity: 90%;
+}
+/**** HEADER ANIMATION ****/
+.typewriter h1 {
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   /* border-right: .15em solid green;  */
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+   animation: 
+     typing 2s steps(30, end),
+     blink-caret .5s step-end infinite;
+ }
+ 
+ /* The typing effect */
+ @keyframes typing {
+   from { width: 0 }
+   to { width: 100% }
+ }
+ 
+ /* The typewriter cursor effect */
+ @keyframes blink-caret {
+   from, to { border-color: transparent }
+   50% { border-color: green }
+ } 
+
+/* navbar */
+.container-nav {
+   position: relative;
+   top: 2em;
+}
+
+/**** HOMEPAGE ****/
+.text-custom-shadow {
+   text-shadow: 1px 2px 10px #2d2d2d;
+}
+
+/* Fix to avoid horizontal scrolling bar when the user's menu is displaying */
+.dropdown-menu.show {
+   left: -7em;
+}
+
+#navbar_color_transparent {
+   background-color: rgba(134, 134, 134, 0.3);
+}
+
+.drop-filter-service {
+   background-color: white;
+}
+
+/**** Dark & light mode ****/
+
+/* When mode = Dark */
+
+
+.dark {
+   color: #fff;
+   background-color: #2a2a2e;
+}
+.darktable{
+   background-color: rgb(104, 99, 99);
+}
+
+.h-white {
+   color: #fff;
+}
+
+/* When mode = White */
+.light {
+   color: #2a2a2e;
+   background-color: #ededed;
+}
+
+.h-black {
+   color: #2a2a2e;
+}
+
+/* The switch - the box around the slider */
+.switch {
+   position: relative;
+   display: block;
+   width: 60px;
+   height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+/* The slider */
+.slider {
+   position: absolute;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #000;
+   
+   -webkit-transition: 0.2s;
+   transition: 0.2s;
+}
+
+.slider:before {
+   position: absolute;
+   content: "";
+   height: 26px;
+   width: 26px;
+   left: 4px;
+   bottom: 4px;
+   background-color: #47ac83;
+   -webkit-transition: 0.2s;
+   transition: 0.2s;
+}
+
+
+input:checked+.slider {
+   background-color: #fff;
+}
+
+input:focus+.slider {
+   box-shadow: 0 0 1px #fff;
+}
+
+input:checked+.slider:before {
+   -webkit-transform: translateX(26px);
+   -ms-transform: translateX(26px);
+   transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+   border-radius: 34px;
+}
+
+.slider.round:before {
+   border-radius: 50%;
+}
+
+/**** ANGELS INFORMATION PAGE ****/
+
+.avatar-size {
+   width: 10em;
+   height: 10em;
+}
+
+.logo-service {
+   width: 4em;
+}
+
+.zoomimg:hover {
+   /*transform: rotate(0.01turn);*/
+   transform: scale(1.05);
+}
+
+/* size of the map feature */
+#mapid {
+   height: 30em;
+   width: 100%;
+}
+
+/**** MODAL INFORMATION ****/
+
+/* information button style for mobil */
+.custom-button {
+   width: 8em;
+   height: 8em;
+   position: absolute;
+   bottom: 3.5em;
+   right: 2em;
+   position: fixed;
+   z-index: 1;
+}
+
+.modal-opacity {
+   background-color: rgba(120, 145, 64, 0.4);
+}
+
+.modal-color {
+   background-color: rgb(25, 135, 84);
+   color: white;
+}
+
+/**** FORMS STYLE ****/
+
+/* service icons */
+.opacity-50 {
+   opacity: 0.5;
+}
+
+.text-opacity-50::placeholder {
+   opacity: 0.5;
+}
+
+.services-icons {
+   cursor: pointer;
+}
+
+input[type="checkbox"] {
+   margin-right: 0.5em;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="email"],
+input[type="password"] {
+   color: #333;
+}
+
+.form-control::placeholder {
+   color: #333;
+}
+
+/* drop down service filter */
+.drop-filter-service {
+   background-color: white;
+}
+
+/**** FOOTER ****/
+
+.footer-top {
+   padding: 60px 0;
+   text-align: left;
+   color: #fff;
+   color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-top h3 {
+   padding-bottom: 10px;
+   color: #fff;
+}
+
+.footer-about img.logo-footer {
+   max-width: 200px;
+   margin-top: 0;
+   margin-bottom: 18px;
+}
+
+.footer-contact p {
+   word-wrap: break-word;
+}
+
+.footer-contact i {
+   padding-right: 10px;
+   font-size: 18px;
+   color: #fff;
+   color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-links a {
+   color: #fff;
+   color: rgba(255, 255, 255, 0.8);
+   border: 0;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+   color: #fff;
+}
+
+.footer-bottom {
+   padding: 15px 0 17px 0;
+   background: #444;
+   text-align: left;
+   color: #aaa;
+}
+
+.footer-social {
+   padding-top: 3px;
+   text-align: right;
+}
+
+.footer-social a {
+   margin-left: 20px;
+   color: #777;
+   border: 0;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+   color: #79a05f;
+   border: 0;
+}
+
+.footer-social i {
+   font-size: 24px;
+   vertical-align: middle;
+}
+
+.footer-copyright {
+   padding-top: 5px;
+}
+
+.footer-copyright a {
+   color: #fff;
+   border: 0;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+   color: #aaa;
+   border: 0;
+}
+
+/**** TEAM ****/
+
+/* flip card */
+.team-card-container {
+   width: 200px;
+   height: 200px;
+   margin-right: 2em;
+   position: relative;
+   top: 17em;   
+}
+
+.team-card-container:hover .team-card {
+   transform: rotateY(180deg);
+}
+
+.team-card {
+   width: 200px;
+   height: 200px;
+   transition: transform 1s ease-in-out;
+   transform-style: preserve-3d;
+   border-radius: 50%;
+}
+
+.team-card figure {
+   width: 200px;
+   height: 200px;
+   position: absolute;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.team-card .front {
+   width: 200px;
+   height: 200px; 
+   border-radius: 50%;
+}
+
+figure img {
+   width: 200px;
+   height: 200px;
+   background-size: cover;
+   border-radius: 50%;  
+}
+
+.team-card .back {
+   width: 200px;
+   height: 200px;
+   background-color: #3d630e;
+   color: #ededed;
+   transform: rotateY(180deg);
+   text-align: center;
+   border-radius: 50%;
+   backface-visibility: hidden;
+}
+
+/* background */
+.team-page{
+   background-image:url("../uploads/teambg.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 120vh;
+}
+
+.team-page_group{
+   justify-content: center;
+   padding-top: 10em;
+   width: 100vw;
+   display: flex;
+   flex-direction: row;
+}
+
+/* animation card incoming */
+.animation {
+   animation-duration: 7s;
+   animation-name: slide;
+   animation-iteration-count: initial;  
+}
+
+.animationTwo {
+   animation-duration: 6s;
+   animation-name: slide;
+   animation-iteration-count: initial;
+}
+
+.animationThree {
+   animation-duration: 5s;
+   animation-name: slide;
+   animation-iteration-count: initial;
+}
+
+.animationFour {
+   animation-duration: 4s;
+   animation-name: slide;
+   animation-iteration-count: initial;
+}
+
+@keyframes slide {
+   from {
+      transform: translateX(-1500px);
+   }
+ 
+   to {
+      transform: translateX(0);
+   }
+ }
+
+/**** BACK OFFICE ****/
+
+.admin {
+   min-height: 60vh;
+}
+
+@media  (min-width: 1200px) {
+.asidefixed{
+   position: sticky;
+   top: 0;
+   left: 0;
+   width: 20vw;
+}
+.asidefixed .menufixed{
+   border-right: 3px solid green;
+   margin-top: 10vh;
+}
+
+}
+/**** 404 ****/
+
+#bg404 {
+   font: 12px "Open Sans", sans-serif;
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   background: #aee6a5;
+
+}
+
+#bg404 a {
+   color: #1FC14A;
+   font-size: 3em;
+   text-decoration: none;
+   outline: none;
+   transition: all 0.25s;
+}
+
+.containererror {
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   max-width: 90vmin;
+   max-height: 80vmin;
+   top: 40%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -40%);
+   transform: translate(-50%, -40%);
+}
+
+.containererror p {
+   margin-top: 2em;
+   text-align: center;
+}
+
+
+.particles-js-canvas-el {
+   position: absolute;
+   top: 0%;
+   left: 0%;
+   bottom: 100%;
+   right: 100%;
+}
+
+.moko-404__a {
+   fill: #5aaf23
+}
+
+.moko-404__b {
+   fill: #70cf32
+}
+
+.moko-404__c {
+   fill: #8fea54
+}
+
+.moko-404__d {
+   fill: #60723C
+}
+
+.moko-404__e {
+   fill: #A6F10D
+}
+
+.moko-404__f {
+   fill: #1FC14A
+}
+
+.moko-404__g {
+   fill: #0D9B33
+}
+
+.moko-404__h {
+   fill: #61b729
+}
+
+.moko-404__i {
+   fill: #5bc92d
+}
+
+.moko-404__j {
+   fill: #0D9B33
+}
+
+.moko-404__k {
+   fill: #2d3033
+}
+
+.moko-404__l {
+   fill: #6c7279
+}
+
+.moko-404__m {
+   fill: #118301
+}
+
+/**** MEDIA QUERIES ****/
+
+@media (min-width: 992px) {
+
+   .footer-top {
+      background: no-repeat url('../images/background/1.jpg');
+      background-size: 100vw;
+      background-position: center;
+   }
+
+   .section-1-box .section-1-box-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 32px;
+      line-height: 60px;
+   }
+
+   .footer-top {
+      padding: 40px 0;
+   }
+
+   .opacity-85 {
+      opacity: 85%;
+   }
+
+   .card:hover {
+      opacity: 100%;
+   }
+}
+
+@media (min-width: 750px) and (max-width: 991px) {
+
+   .footer-top {
+      background: no-repeat url('../images/background/1.jpg');
+      background-size: 100vw;
+      background-position: center;
+   }
+
+   .inner-bg {
+      padding: 180px 0;
+   }
+
+   .section-description p {
+      padding: 0;
+   }
+
+   .section-1-box .section-1-box-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 26px;
+      line-height: 50px;
+   }
+
+   .section-3-box .section-3-box-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 26px;
+      line-height: 50px;
+   }
+
+   .footer-top {
+      padding: 40px 0;
+   }
+
+   .footer-contact i {
+      padding-right: 5px;
+   }
+   
+
+}
+
+@media (max-width: 750px) {
+
+   .footer-top {
+      background: no-repeat url('../images/background/1.jpg');
+      background-size: 180%;
+      background-position: center;
+   }
+
+   .inner-bg {
+      padding: 100px 0 80px 0;
+   }
+
+   .section-description p {
+      padding: 0;
+   }
+
+   .section-1-container {
+      padding-bottom: 60px;
+   }
+
+   .section-1-box {
+      text-align: center;
+   }
+
+   .section-1-box h3 {
+      margin-top: 20px;
+      padding-top: 10px;
+   }
+
+   .section-3-box {
+      text-align: center;
+   }
+
+   .section-3-box h3 {
+      margin-top: 20px;
+      padding-top: 10px;
+   }
+
+   .footer-top {
+      padding: 40px 0;
+      text-align: center;
+   }
+
+   .footer-contact i {
+      padding-right: 5px;
+   }
+
+   .footer-bottom,
+   .footer-social {
+      text-align: center;
+   }
+
+   .footer-social a {
+      margin: 0 10px;
+   }
+
+   /* team page */
+
+   .team-page_group{
+      align-items: center;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+   }
+
+   .team-card-container {
+      width: 150px;
+      height: 150px;
+      margin-top: 2em;
+      position: relative;
+      top: 1em;   
+   }
+
+   .team-card {
+      width: 150px;
+      height: 150px;
+      transition: transform 1s ease-in-out;
+      transform-style: preserve-3d;
+      border-radius: 50%;
+   }
+   
+   .team-card figure {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 0.2em;
+   }
+   
+   .team-card .front {
+      width: 150px;
+      height: 150px; 
+      border-radius: 50%;
+   }
+   
+   figure img {
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+      border-radius: 50%;  
+   }
+   
+   .team-card .back {
+      width: 150px;
+      height: 150px;
+      background-color: #3d630e;
+      color: #ededed;
+      transform: rotateY(180deg);
+      text-align: center;
+      border-radius: 50%;
+   }
+
+}
+
+@media (max-width: 415px) {
+
+   h1,
+   h2 {
+      font-size: 32px;
+   }
+   
+}

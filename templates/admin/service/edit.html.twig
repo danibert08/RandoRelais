@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition d'un service - {{parent()}}{% endblock %}
+
+{% block body %}
+{% include "partials/_admin-aside.html.twig" %}
+				<div class="container admin w-75 mb-5">
+    <h1 class="text-center mb-5" >Service n° {{ service.id }} - {{ service.name }}</h1>
+    {{ include('admin/service/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+</div>
+    
+{% endblock %}

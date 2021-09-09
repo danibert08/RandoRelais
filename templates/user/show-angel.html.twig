@@ -1,0 +1,171 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+	{% include "layout/header-shared.html.twig" %}
+{% endblock %}
+
+{% block body %}
+	<div
+		class="container my-5">
+		{# If user is logged in (either ROLE_USER or ROLE_ADMIN), display the Angel profile #}
+		{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+			<!-- information about the Angel -->
+			<section>
+				<div class="d-flex flex-column flex-md-row align-items-center align-items-md-center justify-content-md-between">
+					<div class="my-3 d-flex flex-column align-items-center align-items-md-start">
+						<div>
+							<h2>A propos de moi</h2>
+						</div>
+						<div class="mb-3 mt-4 d-inline-flex flex flex-column flex-md-row">
+							<div class="d-flex justify-content-center">
+								<!-- angel's avatar -->
+								<img src="{{ asset('assets/uploads/' ~ angelData.picture) }}" class="rounded avatar-size mb-2" alt="photo de profile">
+							 </div>
+							<div
+								class="card-body d-flex flex-column align-items-center align-items-md-start pt-0">
+								<!-- first name of the angel -->
+								<h5 class="card-title">{{ angelData.firstName | capitalize }}</h5>
+								<ul
+									class="card-text list-style ps-0 d-flex flex-column align-items-center align-items-md-start">
+									<!-- city · zip code -->
+									<li>
+										<i class="fas fa-map-marker-alt"></i>
+										{{ angelData.zipCode }}
+										·
+										{{ angelData.city | capitalize }}</li>
+									<!-- phone number -->
+									<li>
+										<i class="fas fa-mobile-alt"></i>
+										{# Add a '0' before the phone number #}
+										{% set realPhoneNumber = '0' ~ angelData.phoneNumber %}
+										{# Split each group of two digits in an array #}
+										{% set phoneArray = realPhoneNumber | split('', 2) %}
+										{# Join each group of two digits, adding a '.' between them : xx.xx.xx.xx.xx #}
+										{% set formattedPhoneNumber = phoneArray| join('.') %}
+										{# Display formatted phone number #}
+										{{ formattedPhoneNumber }}</li>
+									<!-- email address -->
+									<li>
+										<i class="far fa-envelope"></i>
+										{{ angelData.email }}</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+               <!-- weather widget -->
+					<div class="mb-3 text-center">
+						<div class="row g-0">
+                     <!-- weather icon -->
+							<div class="col-md-4">
+								<img src="{{asset("assets/images/weather_icons/"~ weather.weather.0.main ~".png")}}" class="img-fluid" width="300em" alt="...">
+							</div>
+                     <!-- weather infomations -->
+							<div class="col-md-8">
+								<div class="card-body">
+									<h5 class="card-title">Aujourd'hui à
+										{{angelData.city}}
+									</h5>
+									<ul class="list-style ps-0">
+                              <li>
+                                 {{weather.weather.0.description}}
+                              </li>
+										<li>Température :
+											{{ weather.main.temp|round }}
+											°C
+										</li>
+										<li>Température minimale :
+											{{weather.main.temp_min|round}}
+											°C</li>
+										<li>Température maximale :
+											{{weather.main.temp_max|round}}
+											°C</li>
+										<li>Taux humidité :
+											{{weather.main.humidity}}
+											%</li>
+										<li></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Map -->
+				<div id="mapid" data-lat="{{angelData.latitude}}" data-lon="{{angelData.longitude}}" class="mb-5 rounded-3"></div>
+			</section>
+			<hr/>
+			<!-- information about the service -->
+			<section class="my-3">
+				<div class="d-flex justify-content-center justify-content-md-start mb-3">
+					<h2>Mes services</h2>
+				</div>
+				<div class="d-lg-flex flex-lg-row flex-wrap">
+					{% for service in angelData.services %}
+						<!-- logo and name of the service -->
+						<div class="d-flex flex-column align-items-center">
+							<img src="{{ asset('assets/uploads/' ~ service.image) }}" alt="logo du service {{ service.name }}" class="logo-service">
+							<p class="pe-4 ps-4 text-center">{{ service.name }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</section>
+			<hr/>
+			{# User reviews #}
+			<section>
+				<h4>
+					{# Display the average rating of the user and the number of reviews #}
+					<img src="{{ asset('assets/images/service_icons/star.png') }}">
+					{% if averageRating != 0 %}
+						{% if totalReviewsCount == 1 %}
+							{{ averageRating | round(2, 'floor')}}<span class="text-muted">/5</span>
+							·
+							{{ totalReviewsCount }}
+							Evaluation
+						{% else %}
+							{{ averageRating | round(2, 'floor')}}<span class="text-muted">/5</span>
+							·
+							{{ totalReviewsCount }}
+							Evaluations
+						{% endif %}
+					{% else %}
+						{{ angelData.firstName | capitalize }}
+						n'a pas encore de commentaires
+					{% endif %}
+				</h4>
+				{# List of all the reviews of the user #}
+				<ul class="mt-4 row list-unstyled">
+					{% set i = 1 %}
+					{% for review in userReviews %}
+						<li class="col-md-4 col-sm-6 mb-3">
+							{# If the author still exists, display his name #}
+							{% if authorNameArray[i] is defined %}
+								<p class="fw-bold m-0">{{ authorNameArray[i] }}<span class="fw-normal">|
+									{{review.rating}}/5</span>
+								</p>
+							{% else %}
+							{# If not, display "Compte supprim #}
+								<small class="fw-light m-0">Compte supprimé<span class="fw-normal">|
+									{{review.rating}}/5</span>
+								</small>
+							{% endif %}
+							<small class="text-secondary">Le
+								{{review.createdAt | date("m/d/Y")}}</small>
+							<p>{{review.comment}}</p>
+						</li>
+						{% set i = i + 1 %}
+					{% endfor %}
+				</ul>
+				{# Make a review of the user #}
+				<p>
+					<a href="{{ path('review_add', {'id': angelData.id }) }}" id="leave-review">
+						Laisser un commentaire à
+						{{ angelData.firstName | capitalize }}
+					</a>
+				</p>
+			</section>
+		</div>
+		{% else %}
+			<div class="mt-5 mb-5 text-center">
+				Veuillez <a href="{{path('app_login')}}">vous connecter</a> pour accéder à la page information d'un Ange du chemin.
+			</div>
+		{% endif %}
+{% endblock %}

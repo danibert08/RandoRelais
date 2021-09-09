@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../css/style-tim.css">
+		<title>modal</title>
+	</head>
+	<body>
+
+		<!-- Button for modal information => add to nav bar -->
+		<a type="button" data-bs-toggle="modal" data-bs-target="#informationModal">Information</a>
+
+		<!-- Button for mobile version -->
+		<button type="button" data-bs-toggle="modal" data-bs-target="#informationModal" class="hide"><img class="custom-button" src="../icons/info.png" alt="icone information"></button>
+
+		<!-- Modal template => add to header -->
+		<div class="modal  fade modal-opacity" id="informationModal" tabindex="-1" aria-labelledby="informationModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div
+					class="modal-content modal-color">
+					<!-- Modal header => title and close button -->
+					<div class="modal-header">
+						<h5 class="modal-title" id="informationModalLabel">Quelques informations</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<!-- Modal body -->
+					<div
+						class="modal-body">
+						<!-- illustration image -->
+						<img
+						src="../images/randonnee.gif" alt="image illustration" width="200px" class="float-start me-2 rounded">
+						<!-- main description -->
+						<p>Le site Rando-Relais a pour but d’aider le randonneur itinérant à bénéficier de différents services sur son parcours grâce aux Anges du chemin.Les services offerts peuvent être de différentes natures : un emplacement dans un jardin pour monter la tente, un simple robinet pour remplir la poche à eau, ou encore une adresse postale à mi-parcours pour s’envoyer un colis contenant de quelques provision, quelques effets personnels, ou encore de nouveaux topo-guides par exemple.
+						</p>
+						<p>
+							Selon les cas, il pourra également s’agir d’une douche, d’une chambre pour la nuit, ou encore d’un pique-nique. Dans tous les cas, ces services sont offerts gracieusement par les Anges du chemin.
+						</p>
+						<p>Amis visiteurs, vous pouvez remplir un formulaire d’inscription très simple pour devenir utilisateur. Vous pourrez alors choisir d’être  Marcheur ou Ange du chemin !!
+						</p>
+						<p>Marcheur : vous profitez d’un accès complet au site et pouvez demander à bénéficier des services proposés sur votre parcours.</p>
+						<p>Ange du chemin : vous êtes un marcheur, mais en plus, passionné et généreux, vous souhaitez mettre à disposition de la communauté un ou plusieurs services.
+						</p>
+						<p>Fonctionnement : sur la page d’accueil est présentée, triée par date d’inscription, la liste des Anges du chemin. Une recherche affinée par commune permet de réduire efficacement cette liste en la limitant à votre zone d’évolution.
+						</p>
+						<p>Sous réserve d’être connecté, il vous est alors possible d’accéder à la page information d’un Ange du chemin qui propose ses services dans votre zone de recherche.
+						</p>
+						<p>Vous prenez contact avec lui par téléphone, pour vous assurer que le service convoité est toujours disponible (En effet, l’emplacement pour monter la tente, par exemple, est peut-être déjà occupé !) et, le cas échéant, vous récupérez auprès de lui, l’adresse ou l’itinéraire pour arriver à destination.
+						</p>
+						<!-- descritpion of the services -->
+						<ul class="list-style">
+							<!-- logo and name of the service -->
+							<li class="mb-2"><img src="../icons/diner.png" alt="" width="30px">
+								: si vous souhaitez proposé un dîner au Marcheur</li>
+							<!-- logo and name of the service -->
+							<li class="mb-2"><img src="../icons/diner.png" alt="" width="30px">
+								: si vous souhaitez proposé un dîner au Marcheur</li>
+							<!-- logo and name of the service -->
+							<li class="mb-2"><img src="../icons/diner.png" alt="" width="30px">
+								: si vous souhaitez proposé un dîner au Marcheur</li>
+							<!-- logo and name of the service -->
+							<li class="mb-2"><img src="../icons/diner.png" alt="" width="30px">
+								: si vous souhaitez proposé un dîner au Marcheur</li>
+						</ul>
+						<p>Enfin, n’oubliez pas que ce site, donc l’accès à ces services, n’existe que par les Anges du chemin. Pensez donc à distiller un petit mot gentil à leur égard, à votre arrivée, comme à votre départ, ce sera pour eux le meilleurs remerciement !!</p>
+					</div>
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" data-bs-dismiss="modal">Fermer</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	</body>
+</html>

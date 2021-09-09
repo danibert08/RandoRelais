@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche service - {{parent()}} {% endblock %}
+
+{% block body %}
+{% include "partials/_admin-aside.html.twig" %}
+		
+				<div class="container admin w-75 mt-5">
+    <h1 class='text-center'>Service : {{ service.name }}</h1>
+
+<div class="my-3 col-lg-6 col-10 mx-5 mx-md-auto">
+    <table id ="mode" class="mode table table-striped text-center mw-50">
+    <thead>
+    <tr>
+      <th scope="col">Propriété</th>
+      <th scope="col">Valeur</th>
+    </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ service.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ service.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ service.description }}</td>
+            </tr>
+            <tr>
+            <th>Icone</th>
+            <td>
+                <div ><img class="header-icons"  src="{{ asset('assets/uploads/' ~ service.image ) }}"  alt=""/></div>
+            </td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ service.image }}</td>
+            </tr>
+            <tr>
+                <th>Créé le</th>
+                <td>{{ service.createdAt ? service.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour le</th>
+                <td>{{ service.updatedAt ? service.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="d-flex  flex-column flex-md-row justify-content-center my-5">
+    <a role="button" class="btn btn-success text-center  mb-3 mx-auto" href="{{ path('admin_service_index') }}">Liste des services</a>
+    {{ include('admin/service/_delete_form.html.twig') }}
+    <a role="button" class="btn mb-3 btn-success text-center  mx-auto" href="{{ path('admin_service_edit', {'id': service.id}) }}">Modifier</a>
+</div>
+
+</div>
+   
+{% endblock %}
