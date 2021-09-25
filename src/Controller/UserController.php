@@ -78,13 +78,13 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/profil", name="user_profile", methods={"GET|POST"})
+     * @Route("/profil/", name="user_profile", methods={"GET|POST"})
      */
-    public function profile(Request $request, User $user, ImageUploader $imageIploader): Response
+    public function profile(Request $request,ImageUploader $imageIploader): Response
     {
         // We get the picture of the user.
         // $userPicture = $this->getUser()->getPicture();
-
+        $user = $this->getUser();
         // We create the form.
         $form = $this->createForm(UserProfileType::class, $user);
         $form->handleRequest($request);
@@ -99,7 +99,7 @@ class UserController extends AbstractController
                 $user->setPicture($newFileName);
             } else {
                 // We set the picture with the initial picture.
-                $user->setPicture($this->getUser()->getPicture());
+                $user->setPicture($user->getPicture());
                 // $user->setPicture($userPicture);
                 // $this->getUser()->setPicture($userPicture);
             }
